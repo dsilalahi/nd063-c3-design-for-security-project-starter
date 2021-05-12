@@ -1,0 +1,8 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security. List these 2 practices, and a justification for your choices, in the text file named E1T4.txt.
+
+
+1. I was able to directly upload a file to the secret S3 bucket without authentication. 
+Unauthenticated and unauthorized user can upload a file to the Secret Recipe Value 
+
+2. Based on the diagram, C3 Student is allowed to connect to an instance in an untrusted public subnet 2 via SSH
+EC2 instance should not allow C3 student to SSH into an EC2 instance and upload files/scripts.  

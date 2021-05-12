@@ -1,3 +1,10 @@
 Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
 
 Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+1. UDP ports are reachable from the internet; these should be blocked by the security groups
+2. TCP ports other than port 80 should be blocked by the security groups
+3. S3 buckets should have server-side encryption enabled and require SSL connection
+4. Security groups should NOT allow ingress from 0.0.0.0/0
+5. The default security group of a VPC does not allow inbound/outbound traffic
+

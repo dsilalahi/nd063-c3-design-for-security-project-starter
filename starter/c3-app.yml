@@ -71,7 +71,8 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: !Ref AmiIdRecipeWebServiceInstance
-      InstanceType: t3.micro
+      #AvailabilityZone: us-east-1a
+      InstanceType: t2.micro
       KeyName: !Ref KeyPair
       SecurityGroupIds:
       - !GetAtt WebAppSG.GroupId
@@ -114,6 +115,7 @@ Resources:
     Type: AWS::EC2::EIP
     Properties:
       InstanceId: !Ref RecipeWebServiceInstance
+      Domain: vpc
 
   AppLoadBalancer:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
@@ -167,7 +169,8 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: !Ref AmiIdAttackInstance
-      InstanceType: t3.micro
+      #AvailabilityZone: us-east-1c
+      InstanceType: t2.micro
       KeyName: !Ref KeyPair
       IamInstanceProfile: !Ref InstanceProfileRole
       SecurityGroupIds:
