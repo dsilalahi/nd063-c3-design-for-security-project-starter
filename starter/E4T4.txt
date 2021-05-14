@@ -1,8 +1,16 @@
 
 # What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+- MFA should be enabled for root user
+- EBS default encryption should be enabled
+- SSL should be enabled
+
 
 # Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+There are some limitation with VPC private endpoints for S3 e.g., it only supports IPv4 traffic or they're only supported within the same region. 
 
 # Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+No 
+
 
 # What would happen if the original cloud formation templates are applied to this environment.
+The operation will fail

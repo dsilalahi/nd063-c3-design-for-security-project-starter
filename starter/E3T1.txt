@@ -1,3 +1,14 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
+Attack instance performed SSH brute force attacks against the web application server by guessing the SSH password. The findings include: 
+- the date/time the attack happened
+- the AWS resource that was affected by the attack
+- the communication channels: network interface info, ip addresses, security groups, port, direction of the traffic, etc. 
+
+
 
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+
+AWS Guard Duty uses information from CloudTrail event logs, S3 data events, DNS logs, and VPC flow logs to detect this attack. 
+
+AWS CloudTrail keeps track of API calls made using various tools i.e., AWS console, SDK, CLI, and higher-level AWS services. AWS Guard Duty analyzes CloudTrail event logs to find unauthorized or unusual activity within our VPC.  AWS Guard Duty also analyses logs data coming from VPC Flow Logs. 
